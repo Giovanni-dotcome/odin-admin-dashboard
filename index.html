@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="title">
                 <img src="./public/icons/abacus.svg" alt="abacus: the logo of the admin dashboard">
                 <h2>Dashboard</h2>
@@ -31,7 +31,7 @@
                 </ul>
             </div>
         </div>
-        <div class="header">
+        <header>
             <div class="navigation-bar">
                 <div class="search-bar">
                     <img src="public/icons/magnify.svg" alt="Search Icon">
@@ -57,14 +57,11 @@
                     <button>Share</button>
                 </div>
             </div>
-        </div>
-        <main>
-            <div class="projects"></div>
-            <div class="news">
-                <div class="announcements"></div>
-                <div class="trending"></div>
-            </div>
-        </main>
+
+        </header>
+        <div id="projects" class="projects"></div>
+        <div id="announcements" class="announcements"></div>
+        <div id="trending" class="trending"></div>
     </div>
 </body>
 </html>

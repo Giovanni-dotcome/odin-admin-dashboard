@@ -33,9 +33,33 @@ li img {
 }
 
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas:
+  "sidebar header      header      header"
+  "sidebar projects    projects    announcements"
+  "sidebar projects    projects    trending";
+
 }
 
+header {
+    grid-area: header;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.projects {
+    grid-area: projects;
+}
+.announcements {
+    grid-area: announcements;
+}
+.trending {
+    grid-area: trending;
+    height: 100vh;
+}
 .container > * {
     border: 3px solid black;
 }
+
