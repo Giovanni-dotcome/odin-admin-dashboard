@@ -24,3 +24,10 @@ colors:
 #450a0a
 
  */
+
+img {
+    width: 3rem;
+}
+li img {
+    width: 1.5rem;
+}
