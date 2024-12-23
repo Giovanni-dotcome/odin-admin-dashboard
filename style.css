@@ -27,6 +27,7 @@ colors:
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     padding: 0;
+    line-height: 1.15;
     background-color: gray;
     margin: 0;
 }
@@ -55,11 +56,10 @@ img[src$=".svg"] {
     display: grid;
     height: 100vh;
     grid-template-columns:  auto 1fr 260px;
-    grid-template-rows:     auto 1fr 1fr;
+    grid-template-rows:     auto 1fr;
     grid-template-areas:
   "sidebar header      header"
-  "sidebar projects    announcements"
-  "sidebar projects    trending";
+  "sidebar projects    news";
 
 }
 
@@ -127,15 +127,22 @@ header .navigation-bar, header .navigation-bar > *, header .action-bar, header .
  }
 .projects .actions {
     display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .projects .cards {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .projects .card {
-    border: 1px solid gray;
+    border-left: 5px solid yellowgreen;
+    border-radius: 5px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
 }
 /*
     shadows class to put on cards, projects and header
