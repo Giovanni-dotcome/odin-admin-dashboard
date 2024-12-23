@@ -26,6 +26,8 @@ colors:
  */
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding: 0;
+    margin: 0;
 }
 h1, h2, p, h3 {
     margin: 0;
@@ -35,8 +37,6 @@ ul, li {
     padding: 0;
 }
 img {
-    height: 100%;
-    object-fit: cover;
     width: 3rem;
 }
 li img {
@@ -45,17 +45,30 @@ li img {
 
 .container {
     display: grid;
-    grid-template-columns: 260px 1fr 1fr 260px;
-    grid-template-rows: 1fr 2fr 2fr;
+    height: 100vh;
+    grid-template-columns:  auto 1fr 260px;
+    grid-template-rows:     auto 1fr 1fr;
     grid-template-areas:
-  "sidebar header      header      header"
-  "sidebar projects    projects    announcements"
-  "sidebar projects    projects    trending";
+  "sidebar header      header"
+  "sidebar projects    announcements"
+  "sidebar projects    trending";
 
 }
 
 header {
     grid-area: header;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+header .navigation-bar, header .navigation-bar > *, header .action-bar, header .action-bar > * {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header > * {
+    border: 1px solid red;
+    /*display: flex;*/
 }
 .sidebar {
     grid-area: sidebar;
@@ -63,7 +76,7 @@ header {
     gap: 2rem;
     font-weight: bold;
     flex-direction: column;
-    padding: 1rem 0 0 1rem;
+    padding: 1rem;
 }
 .sidebar .title, .sidebar li {
     display: flex;
@@ -84,9 +97,22 @@ header {
 }
 .trending {
     grid-area: trending;
-    height: 100vh;
 }
 .container > * {
     border: 3px solid black;
 }
 
+/*@media only screen and (max-width: 550px) {*/
+/*    .container {*/
+/*        grid-template-columns: 1fr;*/
+/*        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;*/
+/*        grid-template-areas:*/
+/*      "nav"*/
+/*      "sidebar"*/
+/*      "main"*/
+/*      "content1"*/
+/*      "content2"*/
+/*      "content3"*/
+/*      "footer";*/
+/*    }*/
+/*}*/
