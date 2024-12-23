@@ -31,3 +31,11 @@ img {
 li img {
     width: 1.5rem;
 }
+
+.container {
+    display: flex;
+}
+
+.container > * {
+    border: 3px solid black;
+}
