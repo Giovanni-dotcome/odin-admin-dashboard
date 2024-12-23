@@ -24,8 +24,19 @@ colors:
 #450a0a
 
  */
-
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+h1, h2, p, h3 {
+    margin: 0;
+}
+ul, li {
+    list-style-type: none;
+    padding: 0;
+}
 img {
+    height: 100%;
+    object-fit: cover;
     width: 3rem;
 }
 li img {
@@ -34,7 +45,7 @@ li img {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 260px 1fr 1fr 260px;
     grid-template-rows: 1fr 2fr 2fr;
     grid-template-areas:
   "sidebar header      header      header"
@@ -48,6 +59,22 @@ header {
 }
 .sidebar {
     grid-area: sidebar;
+    display: flex;
+    gap: 2rem;
+    font-weight: bold;
+    flex-direction: column;
+    padding: 1rem 0 0 1rem;
+}
+.sidebar .title, .sidebar li {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    align-items: center;
+}
+.sidebar ul {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
 }
 .projects {
     grid-area: projects;
