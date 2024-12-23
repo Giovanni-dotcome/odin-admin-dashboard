@@ -27,20 +27,28 @@ colors:
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     padding: 0;
+    background-color: gray;
     margin: 0;
 }
-h1, h2, p, h3 {
+h1, h2, p, h3, h4, h5, h6 {
     margin: 0;
 }
 ul, li {
     list-style-type: none;
     padding: 0;
 }
-img {
+img[src$=".png"] {
     width: 3rem;
+    height: 3rem;
 }
-li img {
+img[src$=".svg"] {
     width: 1.5rem;
+    height: 1.5rem;
+}
+
+.title img {
+    width: 3rem;
+    height: 3rem;
 }
 
 .container {
@@ -61,22 +69,23 @@ header {
     flex-direction: column;
     padding: 1rem 2rem;
 }
+.card, header {
+    background-color: white;
+}
 header .navigation-bar, header .navigation-bar > *, header .action-bar, header .action-bar > * {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-header > * {
-    border: 1px solid red;
-    /*display: flex;*/
-}
 .sidebar {
     grid-area: sidebar;
     display: flex;
+    color: white;
+    background-color: darkred;
     gap: 2rem;
     font-weight: bold;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 4rem 0 1rem;
 }
 .sidebar .title, .sidebar li {
     display: flex;
@@ -95,12 +104,43 @@ header > * {
 .announcements {
     grid-area: announcements;
 }
+.announcements, .trending {
+    padding-top: 1rem;
+}
+.cards {
+    padding: 2rem 1rem;
+}
 .trending {
     grid-area: trending;
 }
-.container > * {
-    border: 3px solid black;
+.trending .card {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
 }
+.trending .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+ }
+.projects .actions {
+    display: flex;
+}
+
+.projects .cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 300px);
+}
+.projects .card {
+    border: 1px solid gray;
+}
+/*
+    shadows class to put on cards, projects and header
+    grid-template-columns: repeat(autofill, 250px);
+*/
 
 /*@media only screen and (max-width: 550px) {*/
 /*    .container {*/
